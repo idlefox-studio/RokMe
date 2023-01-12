@@ -1,2 +1,5 @@
 # RokMe - @mastyDev 2023.01
-# Work in progress
+# Settings Work in progress
+# send link to Telegram bot
+# multiple timed connection
+# access authentication
