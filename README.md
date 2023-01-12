@@ -1,8 +1,7 @@
 
 ## Rokme
 
-Simple tool for Ngrok Automation
-settings are work in progress
+Simple tool for Ngrok Automation - wip
 
 clone it and test it by running `python rokme.py` in the root folder
 
