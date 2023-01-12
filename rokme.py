@@ -6,24 +6,6 @@ import status
 
 menu = [' Categories ',' Status ',' EXIT '] # missing Settings
 
-# main menu
-def print_menu(sw, selected_row_idx):
-    # with open('services.json') as json_file:
-    #     data = json.load(json_file)
-    h,w=sw.getmaxyx()
-    # load title function
-    print_title(sw,h,w)
-    for idx,row in enumerate(menu):
-        x=w//2-len(row)//2
-        y=h//2-len(menu)//2+idx*2
-        if idx == selected_row_idx:
-            sw.attron(curses.color_pair(5))
-            sw.addstr(y,x,row)
-            sw.attroff(curses.color_pair(5))
-        else:
-            sw.addstr(y,x,row)
-    sw.refresh()
-
 # title
 def print_title(sw,h,w):
     sw.clear()
@@ -36,6 +18,22 @@ def print_title(sw,h,w):
     sw.addstr(y+1,x-(len(data['title'][2]['t'])//2), f"{data['title'][2]['t']}",curses.color_pair(1))
     # sw.addstr(h-2,x-(len(data['title'][3]['t'])//2), f"{data['title'][3]['t']}",curses.color_pair(1))
     services.close()
+    sw.refresh()
+
+# main menu
+def print_menu(sw, selected_row_idx):
+    h,w=sw.getmaxyx()
+    # load title function
+    print_title(sw,h,w)
+    for idx,row in enumerate(menu):
+        x=w//2-len(row)//2
+        y=h//2-len(menu)//2+idx*2
+        if idx == selected_row_idx:
+            sw.attron(curses.color_pair(5))
+            sw.addstr(y,x,row)
+            sw.attroff(curses.color_pair(5))
+        else:
+            sw.addstr(y,x,row)
     sw.refresh()
 
 # Categories
