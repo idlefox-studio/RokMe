@@ -1,4 +1,4 @@
-# RokMe - @mastyDev 2023.01
+# RokMe - @mastyDev 2023.01 
 import curses
 import json
 import cat
